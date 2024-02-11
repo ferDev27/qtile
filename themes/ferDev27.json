@@ -1,0 +1,15 @@
+{
+    "darker": "#0f101a",
+    "dark": "#161826",
+    "light": "#b4befe",
+    "grey": "#1e2133",
+    "focus": "#9465ce",
+    "active": "#cdd6f4",   
+    "inactive": "#282b45",
+    "urgent": "#F07178",
+    "widget0": "#61A059",
+    "widget1": "#DFD828",
+    "widget2": "#43B4C8",
+    "widget3": "#F3D8F3",
+    "widget4": "#e2316c"
+}
