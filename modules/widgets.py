@@ -2,12 +2,11 @@ from libqtile import widget
 from .theme import colors
 from .path import qtile_path
 
+def custom_spacer(background=colors['darker'], foreground=colors['light'], length=10):
+    return widget.Spacer(background=background, foreground=foreground, length=length)
 
-def gap(padding=5):
-    return {
-        'linewidth': 0,
-        'padding': padding
-    }
+def empty_win_name():
+    return widget.WindowName(background=colors['darker'], padding=0, fmt= '')
 
 def right_separator(icon="", size=38, padding=0):
     return {
@@ -24,116 +23,195 @@ def left_separator(icon="", size=38, padding=0):
     }
 
 primary_widgets = [
-                widget.CurrentLayoutIcon(
-                    background=colors['darker'],
-                    scale=0.65,
-                    padding=15
-                    ),
-                widget.CurrentLayout(
-                    background=colors['darker'],
-                    foreground=colors['light'],
-                    ),
-                widget.TextBox(
-                    background=colors['dark'],
-                    foreground=colors['darker'],
-                    **right_separator()
-                    ),
-                widget.TextBox(
-                    background=colors['darker'],
-                    foreground=colors['dark'],
-                    **right_separator()
-                    ),
-                widget.Sep(
-                    background=colors['darker'],
-                    foreground=colors['darker'],
-                    ),
-                widget.WindowName(
-                    foreground=colors['widget4'], 
-                    background=colors['darker'], 
-                    fontsize=18, 
-                    padding=15,
-                    #max_chars=67
-                    fmt= ''
-                    ),
-                widget.GroupBox(
-                    background=colors['darker'],
-                    borderwidth=2,
-                    active=colors['active'],
-                    inactive=colors['inactive'],
-                    highlight_method='line',
-                    highlight_color=[colors['darker'], colors['dark']],
-                    this_current_screen_border=colors['focus'],
-                    this_screen_border=colors['grey']
-                    ),
-                widget.Sep(
-                    background=colors['darker'],
-                    foreground=colors['darker'],
-                    ),
-                widget.TextBox(
-                    background=colors['darker'],
-                    foreground=colors['dark'],
-                    **left_separator()
-                    ),
-                widget.TextBox(
-                    background=colors['dark'],
-                    foreground=colors['grey'],
-                    **left_separator()
-                    ),
-                widget.CheckUpdates(
-                    background=colors['grey'],
-                    colour_no_updates=colors['widget0'],
-                    colour_have_updates=colors['widget1'],
-                    no_update_string='  0',
-                    display_format='  {updates}',
-                    update_interval=1800,
-                    custom_command='checkupdates'
-                    ),
-                widget.Sep(
-                    background=colors['grey'],
-                    foreground=colors['grey'],
-                    **gap()
-                    ),
-                widget.TextBox(
-                    background=colors['grey'],
-                    foreground=colors['widget2'],
-                    **left_separator()
-                    ),
-                widget.Net(
-                    background=colors['widget2'],
-                    foreground=colors['dark'], 
-                    interface='wlp3s0',
-                    format='↓{down:6.2f}{down_suffix:<2}↑{up:6.2f}{up_suffix:<2}'
-                    ),
-                widget.TextBox(
-                    background=colors['widget2'],
-                    foreground=colors['widget3'],
-                    **left_separator()
-                    ),
-                widget.TextBox(
-                    background=colors['widget3'],
-                    foreground=colors['dark'],
-                    text="  Qtile "
-                    ),
-                widget.TextBox(
-                    background=colors['widget3'],
-                    foreground=colors['widget4'],
-                    **left_separator()
-                    ),
-                widget.Clock(
-                        background=colors['widget4'],
-                        foreground=colors['dark'], 
-                        fmt='󰃰  {}', 
-                        format='%d-%m-%y | %H:%M '
-                        ),
-                widget.TextBox(
-                    background=colors['widget4'],
-                    foreground=colors['darker'],
-                    **left_separator()
-                    ),
-                widget.Systray(
-                        background=colors['darker'],
-                    )
-            ]
+    # Left section
+    custom_spacer(colors['grey'], colors['grey']),
+    widget.Image(
+        filename=f"{qtile_path}/imgs/python.png",
+        background=colors['grey'], 
+        margin = 3
+        ),
+    widget.TextBox(
+        background=colors['dark'],
+        foreground=colors['grey'],
+        **right_separator()
+        ),
+    widget.CurrentLayoutIcon(
+        background=colors['dark'],
+        scale=0.60,
+        padding=15
+        ),
+    widget.CurrentLayout(
+        background=colors['dark'],
+        foreground=colors['light'],
+        ),
+    widget.TextBox(
+        background=colors['darker'],
+        foreground=colors['dark'],
+        **right_separator()
+        ),
+
+    # Mid section
+    # Trick to center GroupBox
+    empty_win_name(),
+    widget.GroupBox(
+        background=colors['darker'],
+        borderwidth=2,
+        active=colors['active'],
+        inactive=colors['inactive'],
+        highlight_method='line',
+        highlight_color=[colors['dark'], colors['dark']],
+        this_current_screen_border=colors['focus'],
+        this_screen_border=colors['sfocus'],
+        other_current_screen_border = colors['nonfocus'],
+        other_screen_border = colors['nonfocus']
+        ),
+    empty_win_name(),
+
+    # Right section
+    widget.TextBox(
+        background=colors['darker'],
+        foreground=colors['dark'],
+        **left_separator()
+        ),
+    widget.TextBox(
+        background=colors['dark'],
+        foreground=colors['grey'],
+        **left_separator()
+        ),
+    widget.CheckUpdates(
+        background=colors['grey'],
+        colour_no_updates=colors['widget0'],
+        colour_have_updates=colors['widget1'],
+        no_update_string='  0',
+        display_format='  {updates}',
+        update_interval=1800,
+        custom_command='checkupdates'
+        ),
+    custom_spacer(colors['grey'], colors['grey']),
+    widget.TextBox(
+        background=colors['grey'],
+        foreground=colors['widget2'],
+        **left_separator()
+        ),
+    widget.Net(
+        background=colors['widget2'],
+        foreground=colors['dark'], 
+        interface='wlp3s0',
+        format='↓{down:6.2f}{down_suffix:<2}↑{up:6.2f}{up_suffix:<2}'
+        ),
+    widget.TextBox(
+        background=colors['widget2'],
+        foreground=colors['widget3'],
+        **left_separator()
+        ),
+    widget.Battery(
+        background=colors['widget3'],
+        foreground=colors['dark'],
+        charge_char=" ",
+        discharge_char="󰗶 ",
+        empty_char="󰅙 ",
+        format='{char} {percent:2.0%}'
+        ),
+    custom_spacer(colors['widget3'], colors['widget3'], 5),
+    widget.TextBox(
+        background=colors['widget3'],
+        foreground=colors['widget4'],
+        **left_separator()
+        ),
+    widget.Clock(
+            background=colors['widget4'],
+            foreground=colors['dark'], 
+            fmt='󰃰  {}', 
+            format='%d-%m-%y | %H:%M '
+            ),
+    widget.TextBox(
+        background=colors['widget4'],
+        foreground=colors['darker'],
+        **left_separator()
+        ),
+    widget.Systray(
+            background=colors['darker'],
+        )
+]
+
+secondary_widgets = [
+    # Left section
+    custom_spacer(colors['grey'], colors['grey']),
+    widget.Image(
+        filename=f"{qtile_path}/imgs/python.png",
+        background=colors['grey'], 
+        margin = 3
+        ),
+    widget.TextBox(
+        background=colors['dark'],
+        foreground=colors['grey'],
+        **right_separator()
+        ),
+    widget.CurrentLayoutIcon(
+        background=colors['dark'],
+        scale=0.60,
+        padding=15
+        ),
+    widget.CurrentLayout(
+        background=colors['dark'],
+        foreground=colors['light'],
+        ),
+    widget.TextBox(
+        background=colors['darker'],
+        foreground=colors['dark'],
+        **right_separator()
+        ),
+
+    # Mid section
+    # Trick to center GroupBox
+    empty_win_name(),
+    widget.GroupBox(
+        background=colors['darker'],
+        borderwidth=2,
+        active=colors['active'],
+        inactive=colors['inactive'],
+        highlight_method='line',
+        highlight_color=[colors['dark'], colors['dark']],
+        this_current_screen_border=colors['focus'],
+        this_screen_border=colors['sfocus'],
+        other_current_screen_border = colors['nonfocus'],
+        other_screen_border = colors['nonfocus']
+        ),
+    empty_win_name(),
+
+    # Right section
+    widget.TextBox(
+        background=colors['darker'],
+        foreground=colors['dark'],
+        **left_separator()
+        ),
+    widget.TextBox(
+        background=colors['dark'],
+        foreground=colors['grey'],
+        **left_separator()
+        ),
+    widget.TextBox(
+        background=colors['grey'],
+        foreground=colors['light'],
+        text="  Qtile "
+        ),
+    widget.TextBox(
+        background=colors['grey'],
+        foreground=colors['widget4'],
+        **left_separator()
+        ),
+    widget.Clock(
+            background=colors['widget4'],
+            foreground=colors['dark'], 
+            fmt='󰃰  {}', 
+            format='%d-%m-%y | %H:%M '
+            ),
+    widget.TextBox(
+        background=colors['widget4'],
+        foreground=colors['darker'],
+        **left_separator()
+        )
+]
 
 widget_defaults = dict(
     font="Ubuntu Mono Nerd Font Bold",

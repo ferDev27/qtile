@@ -34,7 +34,7 @@ def autostart():
 # Set Wallpaper
 @hook.subscribe.startup_once
 def set_wallpaper():
-    subprocess.call(f"feh --bg-fill {qtile_path}/wallpapers/space.png &", shell=True)
+    subprocess.call(f"feh --bg-fill {qtile_path}/imgs/space.png &", shell=True)
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: list

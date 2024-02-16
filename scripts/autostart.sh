@@ -8,6 +8,16 @@
 #
 #                  GitHub: https://github.com/ferDev27
 
+# Monitor settings
+hdmi=`xrandr | grep ' connected' | grep 'HDMI' | cut -d' ' -f1`
+
+if [ "$hdmi" = "HDMI-1" ]; then
+  xrandr --output eDP-1 --primary --auto --output HDMI-1 --auto & 
+  # xrandr --output HDMI-1 --primary --auto --output eDP-1 --off & # Only use one external monitor
+else
+  xrandr --output eDP-1 --primary --auto --pos 0x0 --rotate normal &
+fi
+
 # Composer
 picom &
 
@@ -18,6 +28,5 @@ xset r rate 300 35 &
 setxkbmap -option "caps:escape_shifted_capslock" &
 
 # System trace
-cbatticon -u 5 &
 volumeicon &
 

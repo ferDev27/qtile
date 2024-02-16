@@ -1,6 +1,6 @@
 from libqtile.config import Screen
 from libqtile import bar
-from modules.widgets import primary_widgets
+from modules.widgets import primary_widgets, secondary_widgets
 
 primary_screen = Screen(
         top=bar.Bar(primary_widgets, 34, opacity=0.97
@@ -13,4 +13,6 @@ primary_screen = Screen(
         # x11_drag_polling_rate = 60,
     )
 
-screens = [primary_screen]
+secondary_screen = Screen(top=bar.Bar(secondary_widgets, 34, opacity=0.97))
+
+screens = [primary_screen, secondary_screen]

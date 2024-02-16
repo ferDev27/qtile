@@ -5,20 +5,20 @@ from .theme import colors
 def border_options():
     return {
         'border_focus': colors['focus'], 
-        'border_normal': colors['darker'], 
+        'border_normal': colors['nonfocus'], 
         'border_width': 1, 
         'margin': 5
     }
 
 layouts = [
-    layout.Max(),
     layout.MonadTall(**border_options()),
+    layout.MonadWide(**border_options()),
+    layout.Max(),
     # Try more layouts by unleashing below layouts.
     # layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=2),
     # layout.Stack(num_stacks=2),
     # layout.Bsp(),
     # layout.Matrix(),
-    # layout.MonadWide(),
     # layout.RatioTile(),
     # layout.Tile(),
     # layout.TreeTab(),
