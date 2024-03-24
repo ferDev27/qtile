@@ -12,4 +12,4 @@ def load_theme(theme='ferDev27'):
         return json.load(f)
 
 # Set color scheme
-colors = load_theme()
+colors = load_theme("ferDev27")

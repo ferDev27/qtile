@@ -26,7 +26,7 @@ primary_widgets = [
     # Left section
     custom_spacer(colors['grey'], colors['grey']),
     widget.Image(
-        filename=f"{qtile_path}/assets/icons/python.png",
+        filename=f"{qtile_path}/assets/icons/ghosts.png",
         background=colors['grey'], 
         margin = 3
         ),
@@ -96,7 +96,7 @@ primary_widgets = [
     widget.Net(
         background=colors['widget2'],
         foreground=colors['dark'], 
-        interface='wlp3s0',
+        interface='wlp0s20f3',
         format='↓{down:6.2f}{down_suffix:<2}↑{up:6.2f}{up_suffix:<2}'
         ),
     widget.TextBox(
