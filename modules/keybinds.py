@@ -104,7 +104,7 @@ keys = [
         desc="Launch color picker"),
 
     # Browser
-    Key([mod], "b", lazy.spawn("firefox"), 
+    Key([mod], "b", lazy.spawn(browser), 
         desc="Launch browser"),
     
     # Redshift
