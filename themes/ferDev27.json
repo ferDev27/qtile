@@ -1,16 +1,16 @@
 {
-    "darker": "#0f101a",
+    "darker": "#0d0e17",
     "dark": "#161826",
-    "light": "#b4befe",
+    "light": "#c0caf5",
     "grey": "#1e2133",
     "focus": "#9465ce",
-    "sfocus": "#5d93bf",
-    "nonfocus": "#343759",
-    "active": "#cdd6f4",   
-    "inactive": "#282b45",
-    "widget0": "#61A059",
-    "widget1": "#DFD828",
-    "widget2": "#47c1d6",
+    "sfocus": "#5AC1DF",
+    "nonfocus": "#252840",
+    "active": "#c5cffc",   
+    "inactive": "#2b2e4a",
+    "widget0": "#00D948",
+    "widget1": "#EAF052",
+    "widget2": "#00CFF8",
     "widget3": "#F3D8F3",
-    "widget4": "#e2316c"
+    "widget4": "#F92A6C"
 }

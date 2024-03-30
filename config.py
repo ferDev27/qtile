@@ -32,7 +32,7 @@ def autostart():
     subprocess.call([path.join(qtile_path, 'scripts', 'autostart.sh')])
 
 # Set Wallpaper
-wallpaper_name = "space.png"
+wallpaper_name = "skyscraper.png"
 @hook.subscribe.startup_once
 def set_wallpaper():
     subprocess.call(f"feh --bg-fill {qtile_path}/assets/wallpapers/{wallpaper_name} &", shell=True)

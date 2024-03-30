@@ -27,7 +27,8 @@ layouts = [
 ]
 
 floating_layout = layout.Floating(
-    float_rules=[
+        **border_options(),
+        float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,
         Match(wm_class="confirmreset"),  # gitk
