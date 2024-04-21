@@ -2,7 +2,7 @@ from libqtile.config import Key, Group
 from libqtile.command import lazy
 from .keybinds import mod, keys
 
-workspaces = [" 󰇧  ", "   ", "   ", " 󰊢  ", "   ", "   ", " 󰋩  ", "   ", " 󰘸  "]
+workspaces = ["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", " 󰘸  "]
 groups = [Group(ws) for ws in workspaces]
 
 for i, group in enumerate(groups):
