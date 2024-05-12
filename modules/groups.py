@@ -1,4 +1,4 @@
-from libqtile.config import Key, Group
+from libqtile.config import Key, Group, ScratchPad, DropDown
 from libqtile.command import lazy
 from .keybinds import mod, keys
 
@@ -29,4 +29,7 @@ for i, group in enumerate(groups):
                 desc="move focused window to group {}".format(group.name)),
         ]
     )
-
+# Scratchpads
+groups.append(ScratchPad('scratchpad', [
+    DropDown('terminal', 'alacritty', width=0.8, height=0.8, x=0.1, y=0.1)
+    ]))

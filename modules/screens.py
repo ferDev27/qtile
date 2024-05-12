@@ -3,7 +3,7 @@ from libqtile import bar
 from modules.widgets import primary_widgets, secondary_widgets
 
 primary_screen = Screen(
-        top=bar.Bar(primary_widgets, 34, opacity=0.97
+        top=bar.Bar(primary_widgets, 34, opacity=0.9
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
@@ -13,6 +13,6 @@ primary_screen = Screen(
         # x11_drag_polling_rate = 60,
     )
 
-secondary_screen = Screen(top=bar.Bar(secondary_widgets, 34, opacity=0.97))
+secondary_screen = Screen(top=bar.Bar(secondary_widgets, 34, opacity=0.9))
 
 screens = [primary_screen, secondary_screen]

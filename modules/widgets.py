@@ -138,7 +138,7 @@ secondary_widgets = [
     # Left section
     custom_spacer(colors['grey'], colors['grey']),
     widget.Image(
-        filename=f"{qtile_path}/imgs/python.png",
+        filename=f"{qtile_path}/assets/icons/ghosts.png",
         background=colors['grey'], 
         margin = 3
         ),

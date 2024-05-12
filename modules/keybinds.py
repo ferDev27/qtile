@@ -62,6 +62,9 @@ keys = [
     Key([mod, "shift"], "f", lazy.window.toggle_floating(), 
         desc="Toggle floating on a focused window"),
 
+    # Scratchpad
+    Key([mod], "s", lazy.group['scratchpad'].dropdown_toggle('terminal')),
+
     # Kill window
     Key([mod], "w", lazy.window.kill(), 
         desc="Kill focused window"),
@@ -94,9 +97,9 @@ keys = [
         desc="Launch rofi window selector"),
 
     # Screenshots
-    Key([mod], "s", lazy.spawn(f"{qtile_path}/scripts/screenshot"), 
+    Key([], "Print", lazy.spawn(f"{qtile_path}/scripts/screenshot"), 
         desc="Take a full screen screenshot"),
-    Key([mod, "shift"], "s", lazy.spawn(f"{qtile_path}/scripts/screenshot-s"), 
+    Key(["shift"], "Print", lazy.spawn(f"{qtile_path}/scripts/screenshot-s"), 
         desc="Select area and take a screenshot"),
 
     # Color picker
