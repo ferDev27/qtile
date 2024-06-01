@@ -1,5 +1,5 @@
 from libqtile.config import Key
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from .software import terminal, browser
 from .path import qtile_path
 
@@ -93,7 +93,7 @@ keys = [
     Key([mod], "space", lazy.spawn("rofi -show run"), 
         desc="Launch rofi menu"),
 
-    Key([mod, "shift"], "space", lazy.spawn("rofi -show"), 
+    Key([mod, "shift"], "space", lazy.spawn("rofi -show window"), 
         desc="Launch rofi window selector"),
 
     # Screenshots

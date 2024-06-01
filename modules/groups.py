@@ -1,5 +1,5 @@
 from libqtile.config import Key, Group, ScratchPad, DropDown
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 from .keybinds import mod, keys
 
 workspaces = ["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", " 󰘸  "]

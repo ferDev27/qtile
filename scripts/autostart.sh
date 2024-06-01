@@ -21,6 +21,9 @@ fi
 # Composer
 picom &
 
+# Notification
+dunst &
+
 # Cursor speed
 xset r rate 300 35 &
 

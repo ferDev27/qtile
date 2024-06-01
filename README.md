@@ -19,7 +19,7 @@ sudo pacman -S xorg firefox alacritty qtile base-devel pacman-contrib python-psu
 
 Software I use alongside the WM:
 ```bash
-sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon ranger unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler xclip jq tidy
+sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon ranger unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy
 ```
 
 To use my config just copy my config into you .config folder, I will recommend to
