@@ -1,6 +1,7 @@
 from libqtile.config import Key, Group, ScratchPad, DropDown
 from libqtile.lazy import lazy
 from .keybinds import mod, keys
+from .software import terminal
 
 workspaces = ["   ", "   ", "   ", "   ", "   ", "   ", "   ", "   ", " 󰘸  "]
 groups = [Group(ws) for ws in workspaces]
@@ -31,5 +32,5 @@ for i, group in enumerate(groups):
     )
 # Scratchpads
 groups.append(ScratchPad('scratchpad', [
-    DropDown('terminal', 'alacritty', width=0.8, height=0.8, x=0.1, y=0.1)
+    DropDown('terminal', str(terminal), width=0.8, height=0.8, x=0.1, y=0.1)
     ]))

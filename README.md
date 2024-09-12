@@ -14,12 +14,12 @@ Official [Qtile web](https://qtile.org/)
 # Instalation
 Core packages:
 ```bash
-sudo pacman -S xorg firefox alacritty qtile base-devel pacman-contrib python-psutil ttf-ubuntu-mono-nerd rofi feh redshift scrot alsa-utils picom gpick imagemagick wmname 
+sudo pacman -S xorg firefox kitty qtile base-devel pacman-contrib python-psutil ttf-ubuntu-mono-nerd rofi feh redshift scrot alsa-utils picom gpick imagemagick wmname 
 ```
 
 Software I use alongside the WM:
 ```bash
-sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon ranger unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy
+sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot kvantum kvantum-qt5
 ```
 
 To use my config just copy my config into you .config folder, I will recommend to

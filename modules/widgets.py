@@ -22,11 +22,13 @@ def left_separator(icon="", size=38, padding=0):
         'padding': padding
     }
 
+custom_icon = "ghosts.png"
+
 primary_widgets = [
     # Left section
     custom_spacer(colors['grey'], colors['grey']),
     widget.Image(
-        filename=f"{qtile_path}/assets/icons/ghosts.png",
+        filename=f"{qtile_path}/assets/icons/{custom_icon}",
         background=colors['grey'], 
         margin = 3
         ),
@@ -138,7 +140,7 @@ secondary_widgets = [
     # Left section
     custom_spacer(colors['grey'], colors['grey']),
     widget.Image(
-        filename=f"{qtile_path}/assets/icons/ghosts.png",
+        filename=f"{qtile_path}/assets/icons/{custom_icon}",
         background=colors['grey'], 
         margin = 3
         ),

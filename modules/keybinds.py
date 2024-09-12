@@ -97,10 +97,8 @@ keys = [
         desc="Launch rofi window selector"),
 
     # Screenshots
-    Key([], "Print", lazy.spawn(f"{qtile_path}/scripts/screenshot"), 
+    Key([], "Print", lazy.spawn("flameshot gui"), 
         desc="Take a full screen screenshot"),
-    Key(["shift"], "Print", lazy.spawn(f"{qtile_path}/scripts/screenshot-s"), 
-        desc="Select area and take a screenshot"),
 
     # Color picker
     Key([mod], "p", lazy.spawn(f"{qtile_path}/scripts/picker"), 
