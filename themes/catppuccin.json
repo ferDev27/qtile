@@ -1,0 +1,16 @@
+{
+    "darker": "#1e1e2e",
+    "dark": "#242438",
+    "light": "#cdd6f4",
+    "grey": "#2b2b42",
+    "focus": "#cba6f7",
+    "sfocus": "#74c7ec",
+    "nonfocus": "#45475a",
+    "active": "#c5cffc",   
+    "inactive": "#373754",
+    "widget0": "#a6e3a1",
+    "widget1": "#f9e2af",
+    "widget2": "#89b4fa",
+    "widget3": "#b4befe",
+    "widget4": "#C6A0F6"
+}

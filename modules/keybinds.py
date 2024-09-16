@@ -1,3 +1,4 @@
+from os import path
 from libqtile.config import Key
 from libqtile.lazy import lazy
 from .software import terminal, browser
@@ -90,15 +91,22 @@ keys = [
         desc="Launch terminal"),
 
     # Menu
-    Key([mod], "space", lazy.spawn("rofi -show run"), 
+    Key([mod], "space", lazy.spawn("rofi -show drun"), 
         desc="Launch rofi menu"),
 
     Key([mod, "shift"], "space", lazy.spawn("rofi -show window"), 
         desc="Launch rofi window selector"),
 
+    # Power Menu
+    Key([mod], "q", lazy.spawn(f"{qtile_path}/scripts/powermenu"), 
+        desc="Shutdown Qtile"),
+
     # Screenshots
-    Key([], "Print", lazy.spawn("flameshot gui"), 
-        desc="Take a full screen screenshot"),
+    Key([], "Print", lazy.spawn(f"flameshot gui -p {path.expanduser("~/Pictures/Screenshots/")}"), 
+        desc="Take screen screenshot"),
+
+    Key(["shift"], "Print", lazy.spawn(f"flameshot full -p {path.expanduser("~/Pictures/Screenshots/")}"), 
+        desc="Full screen screenshot"),
 
     # Color picker
     Key([mod], "p", lazy.spawn(f"{qtile_path}/scripts/picker"), 

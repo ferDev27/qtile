@@ -14,12 +14,12 @@ Official [Qtile web](https://qtile.org/)
 # Instalation
 Core packages:
 ```bash
-sudo pacman -S xorg firefox kitty qtile base-devel pacman-contrib python-psutil ttf-ubuntu-mono-nerd rofi feh redshift scrot alsa-utils picom gpick imagemagick wmname 
+sudo pacman -S xorg kitty qtile base-devel pacman-contrib python-psutil ttf-ubuntu-mono-nerd rofi feh redshift scrot alsa-utils picom gpick imagemagick wmname 
 ```
 
 Software I use alongside the WM:
 ```bash
-sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot kvantum kvantum-qt5
+sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot zellij kvantum kvantum-qt5
 ```
 
 To use my config just copy my config into you .config folder, I will recommend to
@@ -106,17 +106,15 @@ to edit, add or remove widgets.
 # Scripts
 Inside the ``scripts`` folder you will find the autostart script, which allows 
 you to run commands or spawn some applications when Qtile starts, as well as 
-some utility scripts, like a color picker and screenshot scripts.
+some utility scripts, like a color picker.
 
 Feel free to add, remove or edit any of them, here is an example of a script 
 that is binded to a key combo:
 
 ```python
-# Screenshots
-Key([mod], "s", lazy.spawn(f"{qtile_path}/scripts/screenshot"), 
-    desc="Take a full screen screenshot"),
-Key([mod, "shift"], "s", lazy.spawn(f"{qtile_path}/scripts/screenshot-s"), 
-    desc="Select area and take a screenshot"),
+# Color picker
+Key([mod], "p", lazy.spawn(f"{qtile_path}/scripts/picker"), 
+    desc="Launch color picker"),
 ```
 
 # Key combos
@@ -135,3 +133,4 @@ Here is a table with some of the basic key combinations in my configuration
 | **mod + Tab**             | Switch between layouts        |
 | **mod + ctrl + r**        | Restart Qtile                 |
 | **mod + ctrl + q**        | Quit Qtile                    |
+

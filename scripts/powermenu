@@ -1,0 +1,10 @@
+#!/bin/sh
+
+CHOSEN=$(printf "Shutdown\nReboot\nLog Out" | rofi -dmenu)
+
+case "$CHOSEN" in
+	"Shutdown") poweroff ;;
+	"Reboot") reboot ;;
+	"Log Out") qtile cmd-obj -o cmd -f shutdown ;;
+	*) exit 1 ;;
+esac

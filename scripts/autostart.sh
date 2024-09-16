@@ -12,9 +12,7 @@
 hdmi=`xrandr | grep ' connected' | grep 'HDMI' | cut -d' ' -f1`
 
 if [ "$hdmi" = "HDMI-1" ]; then
-  #xrandr --output eDP-1 --primary --mode 1920x1200 --pos 276x1440 --output HDMI-1 --mode 2560x1440 --pos 0x0 &
   xrandr --output HDMI-1 --primary --auto --output eDP-1 --off & # Only use one external monitor
-  setxkbmap us &
 else
   xrandr --output eDP-1 --primary --auto --pos 0x0 --rotate normal &
 fi
