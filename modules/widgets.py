@@ -37,14 +37,9 @@ primary_widgets = [
         foreground=colors['grey'],
         **right_separator()
         ),
-    widget.CurrentLayoutIcon(
-        background=colors['dark'],
-        scale=0.60,
-        padding=15
-        ),
-    widget.CurrentLayout(
-        background=colors['dark'],
-        foreground=colors['light'],
+    custom_spacer(colors['dark'], colors['dark']),
+    widget.Systray(
+            background=colors['dark'],
         ),
     widget.TextBox(
         background=colors['darker'],
@@ -110,7 +105,7 @@ primary_widgets = [
         background=colors['widget3'],
         foreground=colors['dark'],
         charge_char=" ",
-        discharge_char="󰗶 ",
+        discharge_char="󰁹",
         empty_char="󰅙 ",
         format='{char} {percent:2.0%}'
         ),
@@ -131,8 +126,10 @@ primary_widgets = [
         foreground=colors['darker'],
         **left_separator()
         ),
-    widget.Systray(
-            background=colors['darker'],
+    widget.CurrentLayoutIcon(
+        background=colors['darker'],
+        scale=0.60,
+        padding=6
         )
 ]
 
@@ -148,15 +145,6 @@ secondary_widgets = [
         background=colors['dark'],
         foreground=colors['grey'],
         **right_separator()
-        ),
-    widget.CurrentLayoutIcon(
-        background=colors['dark'],
-        scale=0.60,
-        padding=15
-        ),
-    widget.CurrentLayout(
-        background=colors['dark'],
-        foreground=colors['light'],
         ),
     widget.TextBox(
         background=colors['darker'],
@@ -212,6 +200,11 @@ secondary_widgets = [
         background=colors['widget4'],
         foreground=colors['darker'],
         **left_separator()
+        ),
+    widget.CurrentLayoutIcon(
+        background=colors['darker'],
+        scale=0.60,
+        padding=6
         )
 ]
 

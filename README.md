@@ -19,7 +19,24 @@ sudo pacman -S xorg kitty qtile base-devel pacman-contrib python-psutil ttf-ubun
 
 Software I use alongside the WM:
 ```bash
-sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot zellij kvantum kvantum-qt5
+sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot zellij kvantum kvantum-qt5 udisks2 udiskie ntfs-3g
+```
+
+Bluetooth
+Enable and start the service first 
+```bash
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+```
+
+if you are running **pulseaudio**
+```bash
+sudo pacman -S pulseaudio-bluetooth
+```
+
+Blueman is for convenience
+```bash
+sudo pacman -S bluez blueman
 ```
 
 To use my config just copy my config into you .config folder, I will recommend to

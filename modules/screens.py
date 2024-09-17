@@ -13,6 +13,9 @@ primary_screen = Screen(
         # x11_drag_polling_rate = 60,
     )
 
-secondary_screen = Screen(top=bar.Bar(secondary_widgets, 34, opacity=0.9))
+secondary_screen = Screen(
+        top=bar.Bar(secondary_widgets, 34, opacity=0.9
+        ),
+    )
 
 screens = [primary_screen, secondary_screen]
