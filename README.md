@@ -19,10 +19,16 @@ sudo pacman -S xorg kitty qtile base-devel pacman-contrib python-psutil ttf-ubun
 
 Software I use alongside the WM:
 ```bash
-sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot zellij kvantum kvantum-qt5 udisks2 udiskie ntfs-3g
+sudo pacman -S neovim git lightdm lightdm-gtk-greeter ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji brightnessctl volumeicon libnotify notification-daemon unzip xcb-util-cursor lxappearance sxiv mpv zathura zathura-ps zathura-pdf-poppler dunst xclip jq tidy yazi flameshot zellij kvantum kvantum-qt5 udisks2 udiskie ntfs-3g starship
 ```
 
-Bluetooth
+AUR:
+```bash
+yay -S brave-bin lightdm-webkit-theme-aether xcursor-breeze betterlockscreen 
+```
+
+Bluetooth:
+
 Enable and start the service first 
 ```bash
 sudo systemctl enable bluetooth.service

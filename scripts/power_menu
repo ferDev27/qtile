@@ -1,0 +1,32 @@
+#!/bin/bash
+
+dir="~/.config/qtile/dependencies/rofi"
+rofi_command="rofi -theme $dir/power.rasi"
+
+# Options
+shutdown="󰐥"
+reboot="󰜉"
+suspend="󰒲"
+lock=""
+logout=""
+
+options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+
+chosen="$(echo -e "$options" | $rofi_command -p -dmenu -selected-row 0)"
+case $chosen in
+    $shutdown)
+        systemctl poweroff
+        ;;
+    $reboot)
+        systemctl reboot
+        ;;
+    $lock)
+        betterlockscreen -l blur
+        ;;
+    $suspend)
+        systemctl suspend
+        ;;
+    $logout)
+        qtile cmd-obj -o cmd -f shutdown
+        ;;
+esac

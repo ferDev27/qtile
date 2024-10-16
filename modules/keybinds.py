@@ -23,6 +23,18 @@ keys = [
     Key([mod], "k", lazy.layout.up(), 
         desc="Move focus up"),
 
+    Key([mod], "Left", lazy.layout.left(), 
+        desc="Move focus to left"),
+
+    Key([mod], "Right", lazy.layout.right(), 
+        desc="Move focus to right"),
+
+    Key([mod], "Down", lazy.layout.down(), 
+        desc="Move focus down"),
+
+    Key([mod], "Up", lazy.layout.up(), 
+        desc="Move focus up"),
+
     # Move windows between left/right columns or move up/down in current stack.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), 
         desc="Move window to the left"),
@@ -36,11 +48,29 @@ keys = [
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), 
         desc="Move window up"),
 
+    Key([mod, "shift"], "Left", lazy.layout.shuffle_left(), 
+        desc="Move window to the left"),
+
+    Key([mod, "shift"], "Right", lazy.layout.shuffle_right(), 
+        desc="Move window to the right"),
+
+    Key([mod, "shift"], "Down", lazy.layout.shuffle_down(), 
+        desc="Move window down"),
+
+    Key([mod, "shift"], "Up", lazy.layout.shuffle_up(), 
+        desc="Move window up"),
+
     # Grow/Shrink windows
-    Key([mod, "control"], "l", lazy.layout.grow(), 
+    Key([mod, "control"], "k", lazy.layout.grow(), 
         desc="Grow window up"),
 
-    Key([mod, "control"], "h", lazy.layout.shrink(), 
+    Key([mod, "control"], "j", lazy.layout.shrink(), 
+        desc="Shrink window down"),
+
+    Key([mod, "control"], "Up", lazy.layout.grow(), 
+        desc="Grow window up"),
+
+    Key([mod, "control"], "Down", lazy.layout.shrink(), 
         desc="Shrink window down"),
 
     # Reset window sizes
@@ -79,7 +109,7 @@ keys = [
 
     # Reload and quit Qtile
     Key([mod, "control"], "r", lazy.reload_config(), 
-        desc="Reload the config"),
+        desc="Restart Qtile"),
 
     Key([mod, "control"], "q", lazy.shutdown(), 
         desc="Shutdown Qtile"),
@@ -91,15 +121,15 @@ keys = [
         desc="Launch terminal"),
 
     # Menu
-    Key([mod], "space", lazy.spawn("rofi -show drun"), 
+    Key([mod], "space", lazy.spawn("rofi -show drun -show-icons"), 
         desc="Launch rofi menu"),
 
-    Key([mod, "shift"], "space", lazy.spawn("rofi -show window"), 
+    Key([mod, "shift"], "space", lazy.spawn("rofi -show window -show-icons"), 
         desc="Launch rofi window selector"),
 
     # Power Menu
-    Key([mod], "q", lazy.spawn(f"{qtile_path}/scripts/powermenu"), 
-        desc="Shutdown Qtile"),
+    Key([mod], "Escape", lazy.spawn(f"{qtile_path}/scripts/power_menu"), 
+        desc="Power Menu"),
 
     # Screenshots
     Key([], "Print", lazy.spawn(f"flameshot gui -p {path.expanduser("~/Pictures/Screenshots/")}"), 
@@ -121,6 +151,11 @@ keys = [
         desc="Turn eyecare on"),
     Key([mod, "shift"], "r", lazy.spawn("redshift -x"), 
         desc="Turn eyecare off"),
+
+    # Lockscreen
+    Key([mod, "control"], "l", lazy.spawn("betterlockscreen -l blur"), 
+        desc="Lock screen"),
+
 
     # System Keys --------------------------------------------------------------
 

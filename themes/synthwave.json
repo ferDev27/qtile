@@ -3,7 +3,7 @@
     "dark": "#181a29",
     "light": "#f1ffff",
     "grey": "#1e2133",
-    "focus": "#a151d3",
+    "focus": "#e256aa",
     "sfocus": "#50b9d3",
     "nonfocus": "#343759",
     "active": "#f1ffff",
@@ -12,5 +12,5 @@
     "widget1": "#ffd47e",
     "widget2": "#fb9f7f",
     "widget3": "#F07178",
-    "widget4": "#a151d3"
+    "widget4": "#e256aa"
 }

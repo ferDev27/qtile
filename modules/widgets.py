@@ -1,4 +1,5 @@
 from libqtile import widget
+from libqtile import qtile
 from .theme import colors
 from .path import qtile_path
 
@@ -22,7 +23,7 @@ def left_separator(icon="", size=38, padding=0):
         'padding': padding
     }
 
-custom_icon = "ghosts.png"
+custom_icon = "ferDev27.png"
 
 primary_widgets = [
     # Left section
@@ -30,7 +31,8 @@ primary_widgets = [
     widget.Image(
         filename=f"{qtile_path}/assets/icons/{custom_icon}",
         background=colors['grey'], 
-        margin = 3
+        margin = 3,
+        mouse_callbacks = {'Button1': lambda: qtile.spawn(f"sh {qtile_path}/scripts/power_menu"),},
         ),
     widget.TextBox(
         background=colors['dark'],
@@ -139,7 +141,8 @@ secondary_widgets = [
     widget.Image(
         filename=f"{qtile_path}/assets/icons/{custom_icon}",
         background=colors['grey'], 
-        margin = 3
+        margin = 3,
+        mouse_callbacks = {'Button1': lambda: qtile.spawn(f"sh {qtile_path}/scripts/power_menu"),},
         ),
     widget.TextBox(
         background=colors['dark'],
