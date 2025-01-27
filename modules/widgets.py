@@ -23,7 +23,7 @@ def left_separator(icon="", size=38, padding=0):
         'padding': padding
     }
 
-custom_icon = "ferDev27.png"
+custom_icon = "hearts.png"
 
 primary_widgets = [
     # Left section

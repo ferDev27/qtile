@@ -7,7 +7,7 @@ def border_options():
         'border_focus': colors['focus'], 
         'border_normal': colors['nonfocus'], 
         'border_width': 2, 
-        'margin': 15
+        'margin': 7
     }
 
 layouts = [
