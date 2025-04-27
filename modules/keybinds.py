@@ -3,6 +3,7 @@ from libqtile.config import Key
 from libqtile.lazy import lazy
 from .software import terminal, browser
 from .path import qtile_path
+from .theme import theme
 
 # Leader key
 mod = "mod4"
@@ -121,21 +122,21 @@ keys = [
         desc="Launch terminal"),
 
     # Menu
-    Key([mod], "space", lazy.spawn("rofi -show drun -show-icons"), 
+    Key([mod], "space", lazy.spawn(f"rofi -show drun -show-icons -config {qtile_path}/dependencies/rofi/menu-{theme}.rasi"), 
         desc="Launch rofi menu"),
 
-    Key([mod, "shift"], "space", lazy.spawn("rofi -show window -show-icons"), 
+    Key([mod, "shift"], "space", lazy.spawn(f"rofi -show window -show-icons -config {qtile_path}/dependencies/rofi/menu-{theme}.rasi"), 
         desc="Launch rofi window selector"),
 
     # Power Menu
-    Key([mod], "Escape", lazy.spawn(f"{qtile_path}/scripts/power_menu"), 
+    Key([mod], "Escape", lazy.spawn(f"{qtile_path}/scripts/power_menu power-{theme}.rasi"), 
         desc="Power Menu"),
 
     # Screenshots
-    Key([], "Print", lazy.spawn(f"flameshot gui -p {path.expanduser("~/Pictures/Screenshots/")}"), 
+    Key([], "Print", lazy.spawn(f"{qtile_path}/scripts/screenshot"), 
         desc="Take screen screenshot"),
 
-    Key(["shift"], "Print", lazy.spawn(f"flameshot full -p {path.expanduser("~/Pictures/Screenshots/")}"), 
+    Key(["shift"], "Print", lazy.spawn(f"{qtile_path}/scripts/screenshot-s"), 
         desc="Full screen screenshot"),
 
     # Color picker

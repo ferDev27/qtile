@@ -2,6 +2,7 @@ from libqtile import widget
 from libqtile import qtile
 from .theme import colors
 from .path import qtile_path
+from .theme import theme
 
 def custom_spacer(background=colors['darker'], foreground=colors['light'], length=10):
     return widget.Spacer(background=background, foreground=foreground, length=length)
@@ -23,7 +24,7 @@ def left_separator(icon="", size=38, padding=0):
         'padding': padding
     }
 
-custom_icon = "hearts.png"
+custom_icon = f"{theme}.png"
 
 primary_widgets = [
     # Left section
@@ -32,7 +33,7 @@ primary_widgets = [
         filename=f"{qtile_path}/assets/icons/{custom_icon}",
         background=colors['grey'], 
         margin = 3,
-        mouse_callbacks = {'Button1': lambda: qtile.spawn(f"sh {qtile_path}/scripts/power_menu"),},
+        mouse_callbacks = {'Button1': lambda: qtile.spawn(f"sh {qtile_path}/scripts/power_menu power-{theme}.rasi"),},
         ),
     widget.TextBox(
         background=colors['dark'],

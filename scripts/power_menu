@@ -1,7 +1,7 @@
 #!/bin/bash
 
 dir="~/.config/qtile/dependencies/rofi"
-rofi_command="rofi -theme $dir/power-gruvbox.rasi"
+rofi_command="rofi -theme $dir/$1"
 
 # Options
 shutdown="󰐥"

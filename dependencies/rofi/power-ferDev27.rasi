@@ -1,0 +1,52 @@
+configuration {
+  font: "UbuntuMono Nerd Font Medium 40";
+}
+
+
+* {
+  bg: #161826;
+  bg-alt: #1e2133;
+  bg-selected: #252840;
+
+  fg: #c5cffc;
+  fg-alt: #3b3f66;
+  
+  border: 0;
+  margin: 0;
+  padding: 5;
+  spacing: 0;
+}
+
+window {
+  width: 40%;
+  background-color: @bg;
+}
+
+element {
+  background-color: transparent;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+    horizontal-align: 0.43;
+}
+
+
+listview {
+  background-color: @bg;
+  columns: 5;
+  lines: 1;
+}
+
+mainbox {
+  children: [listview];
+  background-color: @bg;
+}
+
