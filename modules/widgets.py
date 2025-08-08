@@ -129,7 +129,8 @@ primary_widgets = [
         foreground=colors['darker'],
         **left_separator()
         ),
-    widget.CurrentLayoutIcon(
+    widget.CurrentLayout(
+        mode="icon",
         background=colors['darker'],
         scale=0.60,
         padding=6
@@ -205,7 +206,8 @@ secondary_widgets = [
         foreground=colors['darker'],
         **left_separator()
         ),
-    widget.CurrentLayoutIcon(
+    widget.CurrentLayout(
+        mode="icon",
         background=colors['darker'],
         scale=0.60,
         padding=6
