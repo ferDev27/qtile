@@ -1,4 +1,4 @@
 # from libqtile.utils import guess_terminal
 
-terminal = "ghostty"
+terminal = "alacritty"
 browser = "firefox"

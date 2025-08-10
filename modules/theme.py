@@ -4,7 +4,7 @@ from .path import qtile_path
 import subprocess
 
 # Available themes are ferDev27, catppuccin, synthwave, gruvbox, aura
-theme = "aura"
+theme = "synthwave"
 
 # Load theme json data
 def load_theme():
