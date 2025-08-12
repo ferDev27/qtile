@@ -1,45 +1,40 @@
 configuration {
-  display-drun: "App:";
-  display-window: "Win:";
+  display-drun: " ";
+  display-window: " ";
   drun-display-format: "{name}";
-  font: "UbuntuMono Nerd Font Regular 16";
+  font: "UbuntuMono Nerd Font Regular 17.5";
 }
 
 @theme "/dev/null"
 
 * {
-  bg: #202020;
-  bg-alt: #171819;
-  bg-selected: #3C3836;
-
+  selected: #89B482;
+  nonselected: #4d4745;
   fg: #F9F5D7;
-  fg-alt: #665F5C;
-
-  
-  border: 0;
-  margin: 0;
-  padding: 0;
-  spacing: 0;
+  bg: #171819ED;
+  bg-alt: #202020ED;
+  background-color: transparent;
 }
 
 window {
-  width: 40%;
+  width: 100%;
+  height: 100%;
+  padding: 30%;
   background-color: @bg;
 }
 
 element {
   padding: 8 12;
-  background-color: transparent;
-  text-color: @fg-alt;
+  text-color: @nonselected;
 }
 
 element selected {
-  text-color: @fg;
-  background-color: @bg-selected;
+  text-color: @selected;
+  background-color: @bg-alt;
+  border-radius: 10;
 }
 
 element-text {
-  background-color: transparent;
   text-color: inherit;
   vertical-align: 0.5;
 }
@@ -47,34 +42,28 @@ element-text {
 element-icon {
   size: 35px;
   padding: 0 10 0 0;
-  background-color: transparent;
 }
 
 entry {
   padding: 12;
-  background-color: @bg-alt;
   text-color: @fg;
 }
 
 inputbar {
   children: [prompt, entry];
-  background-color: @bg;
 }
 
 listview {
-  background-color: @bg;
   columns: 1;
   lines: 6;
 }
 
 mainbox {
   children: [inputbar, listview];
-  background-color: @bg;
 }
 
 prompt {
   enabled: true;
   padding: 12 0 0 12;
-  background-color: @bg-alt;
   text-color: @fg;
 }

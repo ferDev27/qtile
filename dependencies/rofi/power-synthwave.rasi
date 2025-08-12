@@ -4,49 +4,44 @@ configuration {
 
 
 * {
-  bg: #181a29;
-  bg-alt: #302e4266;
-  bg-selected: #23253bD6;
-
-  fg: #b5b9dd;
-  fg-alt: #4c566a;
-  
-  border: 0;
-  margin: 0;
-  padding: 5;
-  spacing: 0;
+  background-color: transparent;
+  accent: #a151d3;
+  bg: #0d0e17ED;
+  selected: #c0caf5;
+  nonselected: #343759;
 }
 
 window {
-  width: 40%;
+  location: south east;
+  width: 30%;
+  y-offset: -0.5em;
+  x-offset: -0.5em;
   background-color: @bg;
+  border-color: @accent;
+  border-radius: 10;
+  border: 2;
 }
 
 element {
-  background-color: transparent;
-  text-color: @fg-alt;
+  text-color: @nonselected;
+  padding: 25;
 }
 
 element selected {
-  text-color: @fg;
-  background-color: @bg-selected;
+  text-color: @selected;
 }
 
 element-text {
-  background-color: transparent;
   text-color: inherit;
-    horizontal-align: 0.43;
+  horizontal-align: 0.38;
 }
 
-
 listview {
-  background-color: @bg;
   columns: 5;
   lines: 1;
 }
 
 mainbox {
   children: [listview];
-  background-color: @bg;
 }
 
