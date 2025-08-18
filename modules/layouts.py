@@ -1,6 +1,6 @@
 from libqtile import layout
 from libqtile.config import Match
-from .theme import colors
+from config import colors
 
 def border_options():
     return {

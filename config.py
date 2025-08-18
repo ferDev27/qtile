@@ -15,6 +15,16 @@ from libqtile import hook
 from os import path
 import subprocess
 
+# Available themes are ferDev27, catppuccin, synthwave, gruvbox, aura
+from modules.theme import set_wallpaper, json_color_scheme
+
+theme_name = "synthwave"
+wallpaper_name = f"{theme_name}.jpg"
+
+# Set wallpaper and color_scheme
+set_wallpaper(wallpaper_name)
+colors = json_color_scheme(theme_name)
+
 # Configuration modules
 from modules.path import qtile_path
 from modules.software import terminal, browser
@@ -24,7 +34,6 @@ from modules.groups import groups
 from modules.layouts import layouts, floating_layout
 from modules.widgets import widget_defaults, extension_defaults
 from modules.screens import screens
-
 
 # Auto start script
 @hook.subscribe.startup_once

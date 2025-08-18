@@ -3,7 +3,7 @@ from libqtile.config import Key
 from libqtile.lazy import lazy
 from .software import terminal, browser
 from .path import qtile_path
-from .theme import theme
+from config import theme_name
 
 # Leader key
 mod = "mod4"
@@ -122,14 +122,14 @@ keys = [
         desc="Launch terminal"),
 
     # Menu
-    Key([mod], "space", lazy.spawn(f"rofi -show drun -show-icons -config {qtile_path}/dependencies/rofi/menu-{theme}.rasi"), 
+    Key([mod], "space", lazy.spawn(f"rofi -show drun -show-icons -config {qtile_path}/dependencies/rofi/menu-{theme_name}.rasi"), 
         desc="Launch rofi menu"),
 
-    Key([mod, "shift"], "space", lazy.spawn(f"rofi -show window -show-icons -config {qtile_path}/dependencies/rofi/menu-{theme}.rasi"), 
+    Key([mod, "shift"], "space", lazy.spawn(f"rofi -show window -show-icons -config {qtile_path}/dependencies/rofi/menu-{theme_name}.rasi"), 
         desc="Launch rofi window selector"),
 
     # Power Menu
-    Key([mod], "Escape", lazy.spawn(f"{qtile_path}/scripts/power_menu power-{theme}.rasi"), 
+    Key([mod], "Escape", lazy.spawn(f"{qtile_path}/scripts/power_menu power-{theme_name}.rasi"), 
         desc="Power Menu"),
 
     # Screenshots

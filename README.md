@@ -108,12 +108,11 @@ i.e
 ``.config/qtile/themes/myCoolTheme.json`` 
 
 I recommend taking one of the existing ones and edit it to your liking. To set 
-it up, pass the name of your theme to the following function which is located in 
-``.config/qtile/modules/theme.py``
+it up, edit ``theme_name`` variable under 
+``.config/qtile/config.py``
 
 ```python
-# Set color scheme
-colors = load_theme("myCoolTheme")
+theme_name = "synthwave"
 ```
 
 Once is setup you can press **``mod + ctl + r``** to restart the window manager  

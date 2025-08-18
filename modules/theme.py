@@ -3,12 +3,9 @@ import json
 from .path import qtile_path
 import subprocess
 
-# Available themes are ferDev27, catppuccin, synthwave, gruvbox, aura
-theme = "synthwave"
-
 # Load theme json data
-def load_theme():
-    theme_file = path.join(qtile_path, "themes", f'{theme}.json')
+def json_color_scheme(theme_name):
+    theme_file = path.join(qtile_path, "themes", f'{theme_name}.json')
 
     if not path.isfile(theme_file):
         raise Exception(f'"{theme_file}" does not exist')
@@ -16,12 +13,6 @@ def load_theme():
     with open(path.join(theme_file)) as f:
         return json.load(f)
 
-
 # Set Wallpaper
-wallpaper_name = f"{theme}.jpg"
-def set_wallpaper():
+def set_wallpaper(wallpaper_name):
     subprocess.call(f"feh --bg-fill {qtile_path}/assets/wallpapers/{wallpaper_name} &", shell=True)
-
-# Set theme
-colors = load_theme()
-set_wallpaper()
